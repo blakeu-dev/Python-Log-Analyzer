@@ -1,0 +1,11 @@
+TicketID, Timestamp, ErrorCode, Description, Department, Priority
+T-101, 2025-10-01 12:00:00, 50, Printer Failure on PRADM02, Admin, Medium
+T-102, 2025-10-01 12:30:02, 102, Workstation VPN connection issues, Engineering, Medium
+T-103, 2025-10-01 12:48:47, 403, Critical application crash, OR, High
+T-104, 2025-10-01 01:02:04, 50, Printer Failure on PRFIN01, Finance, Low
+T-105, 2025-10-01 01:27:14, 15, System Timeout on Workstation, OR, Medium
+T-106, 2025-10-01 02:00:46, 102, Network issues on Workstation, Finance, Medium
+T-107, 2025-10-01 02:26:20, 50, Printer Failure on PRNUR12, Nursing, Medium
+T-108, 2025-10-01 02:29:29, 15, System Slowness on Workstation, Nursing, Low
+T-109, 2025-10-01 02:42:00, 50, Printer Failure on PRADM05, Admin, Medium
+T-110, 2025-10-01 02:59:30, 403, Application Acess was denied, Admin, High
