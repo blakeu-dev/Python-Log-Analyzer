@@ -1,4 +1,4 @@
-TicketID, Timestamp, ErrorCode, Description, Department, Priority
+TicketID,Timestamp,ErrorCode,Description,Department,Priority
 T-101, 2025-10-01 12:00:00, 50, Printer Failure on PRADM02, Admin, Medium
 T-102, 2025-10-01 12:30:02, 102, Workstation VPN connection issues, Engineering, Medium
 T-103, 2025-10-01 12:48:47, 403, Critical application crash, OR, High
