@@ -1,4 +1,5 @@
 import csv
+import matplotlib.pyplot as plt
 from datetime import datetime
 
 
@@ -87,10 +88,22 @@ class Analyzer:
             filtered_list = self.filter_by_department(department_name)
             department_count[department_name] = len(filtered_list)     
 
-        return department_count       
-    
+        return department_count   
 
+    def time_patterns(self):
+        #Counts tickets that were created in each hour of day
 
+        hourly_count = {}
+        for entry in self.entries:
+            hour = entry.get_hour()
+
+            if hour is not None:
+                if hour in hourly_count:
+                    hourly_count[hour] += 1
+                else:
+                    hourly_count[hour] = 1
+
+        return hourly_count    
 
 #keep outside of Analyzer class
 def load_data(filename):
@@ -112,6 +125,26 @@ def load_data(filename):
     except FileNotFoundError:
         print(f"Error: The file {filename} was not found")
         return []
+
+def error_chart(analyzer):
+    "Creates bar chart of error frequencies"
+
+    error_report = analyzer.count_error_frequency()
+    error_codes = list(error_report.keys())
+    error_counts = list(error_report.values())
+
+    plt.figure(figsize=(10,6))
+    plt.bar(error_codes, error_counts, color = 'gray')
+
+    plt.title('IT Ticket Error Frequencies', fontsize = 12)
+    plt.xlabel('Error Code')
+    plt.ylabel('Number of Occurences')
+    plt.yticks([0,1,2,3,4,5])
+
+    plt.grid(axis = 'y', alpha = 0.3)
+    plt.show()
+    
+
     
 
 if __name__ == "__main__":
@@ -134,7 +167,7 @@ if __name__ == "__main__":
         print("\n--- TOP RECURRING ERRORS ---")
 
         for code, count in error_report.items():
-            print(f"Error code{code}: {count} instances")
+            print(f"Error code {code}: {count} instances")
 
 
         #This was single department report
@@ -153,3 +186,16 @@ if __name__ == "__main__":
 
         for dept, count in department_report.items():
             print(f"Department {dept}: {count} tickets")
+
+        print("\n--- HOURLY TICKET PATTERNS ---")
+        time_report = analysis_tool.time_patterns()
+
+        if time_report:
+            for hour in sorted(time_report.keys()):
+                count = time_report[hour]
+                print(f"{hour:02d}:00 | ({count})")
+        else:
+            print("No data to report.")
+
+        print("\n--- Generating ---")
+        error_chart(analysis_tool)
