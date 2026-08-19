@@ -46,7 +46,10 @@ Generates a bar chart showing how often each error code appears using Matplotlib
 - Error code frequency report  
 - Department ticket counts  
 - Hourly ticket distribution  
-- Matplotlib bar chart  
+- Matplotlib bar chart
+
+<img width="500" height="360" alt="Screenshot 2026-08-19 at 5 54 42 PM" src="https://github.com/user-attachments/assets/543ed756-fc4e-423d-b268-9952856ff371" />
+
 
 ## 🛠️ Technologies Used
 
