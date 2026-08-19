@@ -8,7 +8,7 @@ A Python application that processes and analyzes IT support ticket data from a C
 - CSV parsing with automatic timestamp conversion
 - Error frequency analysis
 - Department workload analysis
-- Hour-by-houur ticket pattern detection
+- Hour-by-hour ticket pattern detection
 - Matplotlib bar chart visualization
 - Clean and modular code
 
